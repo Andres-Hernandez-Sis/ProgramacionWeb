@@ -2,20 +2,33 @@
 ## ¿Qué es el modelo de caja? 
 
 <img src="https://uniwebsidad.com/static/libros/imagenes/css/f0401.gif"></a>
+
 ---
 El modelo de caja es una manera de representar los elementos HTML en una página web.  
 Dichos elementos generan una “caja”  la cual tiene las características que veremos a continuación. 
 
 Las propiedades de las cajas son:
-- <b>Width</b> (Ancho) [Contenido]
-- <b>Height</b> (Largo)
-- <b>Padding</b> (Relleno) : Distancia desde el borde hacia el contenido.
-- <b>Margin</b> (Margen) : Distancia de un elemento a otro.
-- <b>Border</b> (Borde)
-- <b>Background</b> (Fondo) : Ocupa todo el elemento desde los bordes.
+<ol>
+<li>- <b>Width</b> (Ancho) Contenido HTML, parrafos, imagenes, texto etc.</li>
 
+<li>- <b>Height</b> (Largo)</li>
+
+<li>- <b>Padding</b> (Relleno) : Distancia desde el borde hacia el contenido. Es un espacio libre que puede ser opcional o no.</li>
+
+<li>- <b>Margin</b> (Margen) : Distancia de un elemento a otro. Separacion tambien opcional entre las cajas adyacentes.</li>
+
+<li>- <b>Border</b> (Borde) Linea que encierra completamente el contenido y su relleno.</li>
+
+<li>- <b>Background</b> (Fondo) : Ocupa todo el elemento desde los bordes. En pocas palabras es el color de fondo que tendra nuestra caja.</li>
+</ol>
 
 <img src= "https://www.creatuwebnicaragua.com/wp-content/uploads/2015/08/modelo-de-caja.gif"></a>
+
+Cabe destacar que el Margen y el Relleno (Margin y Padding) suelen ser transparentes, por lo que el espacio que ocupan se muestra del color del fondo que se tenga, ya sea una imagen o un color solido.
+
+<img src= "https://uniwebsidad.com/static/libros/imagenes/css/f0403.gif"></a>
+
+
 
 
 Algunos de estos elementos, también tienen propiedades adicionales, para un mejor control y vista, por ejemplo:
@@ -23,6 +36,7 @@ Algunos de estos elementos, también tienen propiedades adicionales, para un mej
 - <b>Min-width</b>: Lo contrario al Max, el mínimo de ancho posible.  
 - <b>Max-height</b>: Altura máxima. 
 - <b>Min-height</b>: Altura mínima. 
+
 
 ## Clasificaciones
 -----
@@ -43,9 +57,9 @@ El relleno, el margen y el borde mantienen a los otros elementos alejados de la 
 
 <li>Las propiedades width y height no se aplican.</li>
 
-<li>Se aplica relleno, margen y bordes **verticales**, pero no mantienen alejadas otras cajas en línea.</li>
+<li>Se aplica relleno, margen y bordes <b>verticales</b>, pero no mantienen alejadas otras cajas en línea.</li>
 
-<li>Se aplica relleno, margen y bordes **horizontales**, y mantienen alejadas otras cajas en línea.</li>
+<li>Se aplica relleno, margen y bordes <b>horizontales</b>, y mantienen alejadas otras cajas en línea.</li>
 </ol>
 
 
