@@ -24,7 +24,8 @@ Las propiedades de las cajas son:
 
 <img src= "https://www.creatuwebnicaragua.com/wp-content/uploads/2015/08/modelo-de-caja.gif"></a>
 
-Cabe destacar que el Margen y el Relleno (Margin y Padding) suelen ser transparentes, por lo que el espacio que ocupan se muestra del color del fondo que se tenga, ya sea una imagen o un color solido.
+Cabe destacar que el Margen y el Relleno (Margin y Padding) suelen ser transparentes, por lo que el espacio que ocupan se muestra del color del fondo que se tenga, ya sea una imagen o un color solido. 
+Tambien, si se tiene un color y una imagen definidos al mismo tiempo, la imagen tendra mayor prioridad y se mostrara. Por otro lado, si tenemos un color e imagen definidos y nuestra imagen no abarca todo el fondo, el color tambien se mostrara, lo que nos permite combinar colores e imagenes para un mejor diseño.
 
 <img src= "https://uniwebsidad.com/static/libros/imagenes/css/f0403.gif"></a>
 
