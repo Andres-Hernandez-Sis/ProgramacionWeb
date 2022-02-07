@@ -1,5 +1,7 @@
 # Modelo de Caja
 ## ¿Qué es el modelo de caja? 
+
+<img src="https://uniwebsidad.com/static/libros/imagenes/css/f0401.gif"></a>
 ---
 El modelo de caja es una manera de representar los elementos HTML en una página web.  
 Dichos elementos generan una “caja”  la cual tiene las características que veremos a continuación. 
