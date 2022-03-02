@@ -1,0 +1,54 @@
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+}
+
+th, h1, h3{
+    text-align: center;
+    padding: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+td{
+padding: 10px;
+}
+
+td p{
+    text-align: justify;
+}       
+
+
+@media only screen and (max-width: 800px) 
+{
+    /* Cambiar el display de los elementos de tabla a block */
+    /*----------------------------------------------------- */
+    table, thead, tbody, th, td, tr {
+        display: block;
+        text-align: center;
+    }
+
+    tr { border: 1px solid #ccc; }
+
+    /* Esconder los encabezados de la tabla */
+    /*------------------------------------- */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    td {
+        position: relative;      /* Cada campo ahora sera una fila*/                       
+        border: none;
+        border-bottom: 1px solid rgb(255, 255, 255);
+    }
+
+    td:before {
+        position: absolute;    /* Encabezados */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+    }
+}    

@@ -27,6 +27,7 @@ ul > li > ul {
     display: none;
 }
 
+
 /* Los submenús solo se mostrarán cuando el usuario haga click en la opción <a>
    y se llegue desde el enlace al elemento <li> */
    ul > li:target > ul {
