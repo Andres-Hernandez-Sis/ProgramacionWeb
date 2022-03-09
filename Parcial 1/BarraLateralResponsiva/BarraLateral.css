@@ -9,7 +9,7 @@
 
 div.sidebar {
   position: fixed;
-  background-color:rgb(240,242,245);
+  background-color:rgb(67, 224, 185);
   width: 200px;
   height: 100%;
   overflow: auto;
@@ -58,6 +58,7 @@ table, th, td{
 div > table{
   margin:  20px;
   background-color: white;
+  border-collapse: collapse;
 }
 
 th, h1, h3{
@@ -91,8 +92,6 @@ input:checked ~ .content {
   margin-left: 0px;
 }
 
-
-
 @media screen and (max-width: 1200px) {
   div.sidebar {
     position: relative;
@@ -107,5 +106,9 @@ input:checked ~ .content {
   .sidebar a {
     float: none;
     text-align: center;
+  }
+
+  table + img{
+    display: none;
   }
 }
