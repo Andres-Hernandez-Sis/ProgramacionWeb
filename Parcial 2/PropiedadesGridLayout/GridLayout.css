@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(133, 71, 71);
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows:   20% 20% 20% 20% 20%;
+    
+}
+
+.caja{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+
+#Caja17, #caja18, #Caja19{
+    background-color: rgb(210, 223, 156);
+}
+#Caja24, #Caja22{
+    background-color: rgb(133, 71, 71);
+}
+
+#caja1, #caja5, #caja16, #caja20, #caja21, #caja23, #caja25{
+    background-color: orange;
+}
