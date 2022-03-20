@@ -5,27 +5,22 @@
   font-family: Segoe UI;
 }
 
-
-div.content {
+.flex{
   display: flex;
-  flex-direction: row;
+  height: 100%;
+}
+
+div.content { 
   background-color: rgb(240,242,245);
-  margin-left: 200px;
-  padding: 20px;
-  height: 610px;
+  padding: 30px;  
 }
 
 /*Contenido del sidebar*/
 div.sidebar {
-  position: fixed;
+  flex-direction: column;
   background-color:rgb(80, 25, 126);
   width: 200px;
-  height: 100%;
-  overflow: auto;
-}
-
-.contenidoOpcion {
-  display: none; 
+  flex-shrink: 0;
 }
 
 #opcion1:target, #opcion2:target, #opcion3:target, #opcion4:target { 
@@ -44,17 +39,6 @@ a {
   color: rgb(255, 255, 255);
 }
 
-
-/*Bello nav*/
-nav{
-  text-align: center;
-  color: rgb(255, 255, 255);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: x-large;
-  background-color:rgb(80, 25, 126);
-  height: 50px; 
-  padding: 8px;   
-}
 
 
 /*Estilos para tablas*/
@@ -87,11 +71,9 @@ img {
   top: 200px;
   z-index: 2000;
 }
-
 .social ul{
   list-style: none;
 }
-
 .social ul li a{
   display: inline-block;
   color: #fff;
@@ -101,61 +83,42 @@ img {
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
 }
-
 .social ul li .facebook{background: #3b5998;}
 .social ul li .twitter{background:  rgb(0, 172, 237 )}
 .social ul li .tiktok{background: #000000;}
-
-.social ul li a:hover{
-  padding: 10px;  
-}
+.social ul li a:hover{padding: 10px;  }
 
 
-
-/*Propiedades checkbox*/
-input { 
-  display: none;
-}
-
-/*Posicion estatica*/
-input:checked + .sidebar{
-  height:0px;
-}
-
-input:checked ~ .content {
-  margin-left: 0px;
-}
 
 
 /*Configuracion de resoluciones*/
 @media screen and (max-width: 1200px) {
   
-  div.contenedor {
-    flex-direction: column;  
+  .flex{
+      flex-direction: column;
   }
-  
-  div.sidebar {
-    display: flex;
-    width: 100%;
-    height: 40px;
-    justify-content: space-around;
+
+  div.sidebar{
+      flex-direction: row;
+      width: 100%;
+      align-content: stretch;
   }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-  
+
+  .sidebar a{
+    float: left;
+      text-align: center;
+  }
 }
 
 @media screen and (max-width: 600px) {
 
-  div.sidebar {
-    width: 100%;
-    height: fit-content;
-    flex-direction: column;
-    text-align:center;
-    
+  .flex{
+      flex-direction: column;
   }
-  .sidebar a {
-    float: none;
-    text-align: center;
+
+  div.sidebar{
+      flex-direction: column;
+      width: 100%;
   }
+
 }
