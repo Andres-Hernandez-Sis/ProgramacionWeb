@@ -102,6 +102,11 @@ input:checked ~ .content {
   div.content {margin-left: 0;}
 }
 
+
+
+
+
+
 @media screen and (max-width: 600px) {
   .sidebar a {
     float: none;
