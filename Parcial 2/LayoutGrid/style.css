@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+    text-align: justify;
+    
+}
+
+img {
+    width: 20%;
+    height: 10%;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.content {
+    display: grid;
+    width: 100vw;
+    height: 100vh;  
+    background-image: url('images/wp2.jpg');
+
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 40% 25% 25% 10%;  /*200px 152.75px 152.75px 105.5px; <- tmb se puede ajustar segun los px*/
+
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid black ;
+}
+
+.box {
+    border: 1px solid black;
+    background-color: rgb(240,242,245);
+    padding: 20px;
+    border-radius: 7px;
+}
+
+#header, #footer {
+    grid-column: 1/3;
+}
+/*
+#header{ line-height: 200px;}
+#section1, #section2, #section3, #section4{ line-height: 152.75px;}
+#footer{ line-height: 105.5px;}
+Esto solo era para mostrar el nombre de la seccion en medio.
+*/
