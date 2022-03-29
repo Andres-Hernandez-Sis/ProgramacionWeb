@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+.contenedor {
+    width:100vw;
+    height:100vh;
+    background-color: rgb(255, 0, 76);
+
+    display:grid;
+    grid-template-columns: 155px 155px 155px;
+    grid-template-rows: 155px 155px 155px;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    grid-auto-flow: dense;
+}
+
+img{
+    height: 100vh;
+    width: 100vw;
+}
+
+.Caja {
+    width: 150px;
+    height: 150px;
+    background-color:rgb(12, 112, 112);
+    text-align:center;
+    border: 1px solid rgb(226, 214, 214);  
+    image-rendering: auto;
+}
+
+.clic1
+{
+	background-image: url(img/1.png);
+}
+
+.clic2
+{
+	background-image: url(img/2.png);
+}
+
+.clic3
+{
+	background-image: url(img/3.png);
+}
+
+.clic4
+{
+	background-image: url(img/4.png);
+}
+
+.clic5
+{
+	background-image: url(img/5.png);
+}
+
+.clic6
+{
+	background-image: url(img/6.png);
+}
+
+.clic7
+{
+	background-image: url(img/7.png);
+}
+
+.clic8
+{
+	background-image: url(img/8.png);
+}
+
+.clic9
+{
+	background-image: url(img/9.png);
+}
