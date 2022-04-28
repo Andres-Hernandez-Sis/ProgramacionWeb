@@ -86,10 +86,10 @@
       </div>
 
       <button id="btn1" type="button" class="btn btn-primary">Guardar Producto</button>
-      <button id="btn2" type="reset" class="btn btn-default">limpiar Campos</button>
+      <button id="btn2" type="button" class="btn btn-default">Modal JS</button>
       
       <!-- Button trigger modal -->
-      <button id="idmodal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Launch demo modal </button>
+      <button id="idmodal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Modal Bootstrap </button>
           
           <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -115,8 +115,8 @@
     <div>
 
       
-      <div class="alert alert-warning alert-dismissible collapse" role="alert" id="alerta1">
-            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+      <div class="alert alert-success alert-dismissible collapse" role="alert" id="alerta1">
+            <strong>Holy guacamole! Producto Agregado!</strong> You should check in on some of those fields below.
             <button id="idclose" type="button" class="close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -131,8 +131,6 @@
                   $('#idclose').click(function(){
                         $('#alerta1').hide();
                   });
-
-
 
                   $('#btn2').click(function(){
                         $('#exampleModal').modal('show');
