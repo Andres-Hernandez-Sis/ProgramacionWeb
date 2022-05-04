@@ -1,4 +1,3 @@
-
 window.onload = function() {
 
 document.getElementById("btnajax").addEventListener("click",pedirHeader);
