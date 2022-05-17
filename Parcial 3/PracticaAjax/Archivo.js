@@ -1,3 +1,19 @@
+$(document).ready(function(){
+    $('#btn1').click(function(){
+          $('#alerta1').show();
+    });
+//disparo el modal
+    $('#idclose').click(function(){
+          $('#alerta1').hide();
+    });
+
+    $('#btn2').click(function(){
+          $('#exampleModal').modal('show');
+    });
+})
+
+
+
 window.onload = function() {
 
 document.getElementById("btnajax").addEventListener("click",pedirHeader);
