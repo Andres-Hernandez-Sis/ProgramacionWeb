@@ -1,5 +1,5 @@
 Create database A19100197;
-Use A19100197;
+Use A19100197; 
 
 /*Se agrego la A al principio pues no dejaba ponerle solo numeros de nombre*/
 
