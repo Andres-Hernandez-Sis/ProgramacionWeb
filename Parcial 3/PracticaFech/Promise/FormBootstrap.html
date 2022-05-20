@@ -21,13 +21,18 @@
     <form class="form">
 
       <div class="row">
-            <div class="form-group col-sm-12 col-md-8 col-lg-6">
-                  <label for="nomProducto">Nombre Producto</label>
-                  <input id="nomProducto" type="text" class="form-control" placeholder="Nombre producto"/>
+            <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                  <label for="NomProducto">Nombre Producto</label>
+                  <input id="NomProducto" type="text" class="form-control" placeholder="Nombre producto"/>
             </div>  
-            <div class="form-group col-sm-12 col-md-4 col-lg-6">
+            <div class="form-group col-sm-12 col-md-3 col-lg-3">
                 <label for="idProducto" class="control-label">ID Producto</label>
                 <input id="idProducto" type="text" class="form-control" placeholder="Ej: 4553"/>
+            </div>
+
+            <div class="form-check form-check-inline col-sm-12 col-md-2 col-lg-2">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Si" />
+                  <label class="form-check-label" for="inlineCheckbox1">Producto Importado</label>
             </div>
       </div>
 
@@ -49,7 +54,7 @@
             </div>
             <div class="form-group col-sm-12 col-md-4 col-lg-6">
                   <label for="Caducidad">Caducidad</label>
-                  <input id="Caducidad" type="text" class="form-control" placeholder="DD/MM/AAAA"/>
+                  <input id="Caducidad" type="text" class="form-control" placeholder="DD/MM/AA"/>
             </div>
       </div>
       
@@ -62,18 +67,19 @@
                     <option>Frutas</option>
                     <option>Verduras</option>
                     <option>Cereales</option>
-                    <option>Leguminosas y alimentos de origen animal</option>
+                    <option>Leguminosas</option>
                     <option>Cosas del Hogar</option>
                   </select>
             </div>
             <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                  <label for="idcodigo">Numero de codigo de barras</label>
-                  <input id="idcodigo" type="text" class="form-control" placeholder="Sin espacios: 7374235752140"/>
+                  <label for="idCodigo">Numero de codigo de barras</label>
+                  <input id="idCodigo" type="text" class="form-control" placeholder="Sin espacios: 7374235752140"/>
             </div>   
+
       </div>
 
 
-
+      <br>
       <button id="btn1" type="button" class="btn btn-primary">Guardar Producto</button>
       <button id="btn2" type="button" class="btn btn-danger">Modal JS</button>
       

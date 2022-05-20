@@ -10,7 +10,7 @@ $(document).ready(function(){
         $('#btn2').click(function(){
             $('#exampleModal').modal('show');
         });
-})
+});
 
 
 
@@ -21,8 +21,8 @@ window.onload = function() {
     
     function pedirHeader() 
     {  
-    var solicitud = new XMLHttpRequest();          //Crear objeto XMLHttpRequest
-    solicitud.onreadystatechange = function()      // En esta propiedad declaramos la funcion a ejecutar
+        var solicitud = new XMLHttpRequest();          //Crear objeto XMLHttpRequest
+        solicitud.onreadystatechange = function()      // En esta propiedad declaramos la funcion a ejecutar
     {                                        
         if (solicitud.readyState == 4 && solicitud.status == 200) // cuando cambie el status del objeto XMLHttpRequest
         {                 // La respueta esta lista
@@ -33,62 +33,64 @@ window.onload = function() {
     solicitud.send();
     }
     
-    function iniciarHeader() {
+    function iniciarHeader() 
+    {
         document.getElementById("myDiv").innerHTML = "<P>Registro de un Nuevo Producto</P>"; 
-    }} 
+    }
+} 
 
 
 
 
  $(document).ready(function() {
+
+//Funcion json
       $('#btnjson').click(function() {
           $.post('getregistro.php',{},function(data){
 
                 console.log(data);
-                $('#nomProducto').val(data.nomProducto);
+                $('#NomProducto').val(data.NomProducto);
                 $('#idProducto').val(data.idProducto);
                 $('#Descripcion').val(data.Descripcion);
                 $('#Cantidad').val(data.Cantidad);
                 $('#Proveedor').val(data.Proveedor);
                 $('#Caducidad').val(data.Caducidad);
                 $('#Categorias').val(data.Categorias);
-                $('#idcodigo').val(data.idcodigo);
+                $('#idCodigo').val(data.idCodigo);
             },'json');
-      });
+            });
 
-
-//Funcion 
-$('#btnajaxP').click(function() {
-      new Promise (function (resolve,reject){
-          var Solicitud = new XMLHttpRequest ();
-          Solicitud.onreadystatechange = function() {
-               if(Solicitud.readyState == 4 &&  Solicitud.status == 200){
-                   resolve(Solicitud.responseText);
-               }};
-          Solicitud.open("GET","Archivo.txt", true);
-          Solicitud.send();
-      }).then(value => document.getElementById("myDiv").innerHTML = value);
-    });
+//Funcion Promise
+        $('#btnajaxP').click(function() {
+            new Promise (function (resolve,reject){
+                var Solicitud = new XMLHttpRequest ();
+                Solicitud.onreadystatechange = function() {
+                    if(Solicitud.readyState == 4 &&  Solicitud.status == 200){
+                        resolve(Solicitud.responseText);
+                    }};
+                Solicitud.open("GET","Archivo.txt", true);
+                Solicitud.send();
+            }).then(value => document.getElementById("myDiv").innerHTML = value);
+            });
 });
 
 
-
-$(document).ready(function() {
 //Metodo json fetch
+$(document).ready(function() {
 document.getElementById("btnJsonFetch").addEventListener("click", function(){
-    //$('#btnJsonFetch').click(function() {
-    //console.log("click");
-
+       
     let promesa  = fetch('getRegistro.php');
-
-    // Se puede hacer esto> promesa.then(function(respuesta) {console.log(respuesta); console.log(respuesta.json() ); });
-    // Promesa con funcion flecha
-     promesa.then( respuesta => respuesta.json() )
-            .then( datos => console.log(datos) );
-
-            //tambien se puede hace para mostrar los datos
-});
-
-
+    promesa.then( respuesta => respuesta.json() )
+            .then( datos => {
+                $('#NomProducto').val(datos.NomProducto);
+                $('#idProducto').val(datos.idProducto);
+                $('#Descripcion').val(datos.Descripcion);
+                $('#Cantidad').val(datos.Cantidad);
+                $('#Proveedor').val(datos.Proveedor);
+                $('#Caducidad').val(datos.Caducidad);
+                $('#Categorias').val(datos.Categorias);
+                $('#idCodigo').val(datos.idCodigo);
+            });
+        });        
 });
 
