@@ -112,7 +112,7 @@ $('#btnConexion').click(function() {
             $('#Cantidad').val(objeto.cantidad);
             $('#Proveedor').val(objeto.proveedor);
             $('#Caducidad').val(objeto.caducidad);
-            $('#Categorias').val(objeto.categorias);
+            $('#Categorias').val(objeto.categoria);
             $('#idCodigo').val(objeto.id);                
       }
 });
