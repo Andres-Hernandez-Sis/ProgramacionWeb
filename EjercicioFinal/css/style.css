@@ -7,8 +7,8 @@
 
 div p{
     text-align: center;
-    background-color: darkseagreen;
-    height: 50px;  
+    background-color: rgb(84, 219, 84);
+    height: auto;
     font-size: 2vw; 
  
 }

@@ -2,7 +2,7 @@ Create database `19100197`;
 Use `19100197`; 
 
 Create table Producto(
-id int not null AUTO_INCREMENT PRIMARY KEY, 
+id not null AUTO_INCREMENT PRIMARY KEY, 
 nombre varchar(30) not null,
 descripcion varchar(45) null,
 cantidad int not null,
