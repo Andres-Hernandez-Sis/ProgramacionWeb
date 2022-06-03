@@ -1,57 +1,62 @@
 $(document).ready(function(){
 
-//Consultar registros de la BD
+//Consultar registros de la BD SIRVE
 $('#btnConsultar').click(function() {
-            
-      try{
+      
             let parid = prompt("Teclee el ID a consultar");
-            $.post('php/Registrar.php',{par1:parid},function(datatable){      
-            refrescar(datatable);
+            $.post('php/Consultar.php',{par1:parid},function(dato){      
+            refrescar(dato);
             },'json');
-      }
-        catch{
-              console.log("Error");
-        }    
+
         });
-
-            function refrescar(datatable) {
-            console.log(datatable);
-            $('#nombre').val(datatable.nombre);
-            $('#id').val(datatable.id);
-            $('#descripcion').val(datatable.descripcion);
-            $('#cantidad').val(datatable.cantidad);
-            $('#proveedor').val(datatable.proveedor);
-            $('#caducidad').val(datatable.caducidad);
-            $('#categorias').val(datatable.categoria);
-            $('#codigo_barra').val(datatable.codigo_barra);
-            if(datatable.importado == "Si") 
-            {
-                  document.getElementById('Si').checked = true;
-            }
-      }
-
-
-
-
-
-
-
-
-
 
 $('#btnInsertar').click(function() {
 
-        let nombre = $('#nombre').val();
-        let descripcion = $('#descripcion').val();
-        let cantidad = $('#cantidad').val();
-        let proveedor = $('#proveedor').val();
-        let caducidad = $('#caducidad').val();
-        let categoria = $('#categoria').val();
-        let codigo_barra = $('#codigo_barra').val();
-        let importado = $('#inlineCheckbox1').prop("checked") == true ? "Si" : "No";
+            let nom = $('#nombre').val();
+            let des = $('#descripcion').val();
+            let cant= $('#cantidad').val();
+            let prov = $('#proveedor').val();
+            let cad = $('#caducidad').val();
+            let cate = $('#categoria').val();
+            let codbar = $('#codigo_barra').val();
+            let imp = $('#inlineCheckbox1').prop("checked") == "Si" ? "Si" : "No";
 
-        $.post('php/Registrar.php',{nombre:nombre, descripcion:descripcion, cantidad:cantidad, proveedor:proveedor, caducidad:caducidad, categoria:categoria, codigo_barra:codigo_barra, importado:importado},function(data){
-            console.log(data);
+        $.post('php/Registrar.php',{nombre:nom, descripcion:des, cantidad:cant, proveedor:prov, caducidad:cad, categoria:cate, codigo_barra:codbar, importado:imp},function(dato){
+            refrescar(dato);
           },'json');
-    });           
+});   
+
+
+
+$('#btnLimpiar').click(function(){
+      limpiar();
+});
+    
+  
+
+
+function refrescar(obj) {
+      console.log(obj);
+      $('#nombre').val(obj.nombre);
+      $('#id').val(obj.id);
+      $('#descripcion').val(obj.descripcion);
+      $('#cantidad').val(obj.cantidad);
+      $('#proveedor').val(obj.proveedor);
+      $('#caducidad').val(obj.caducidad);
+      $('#categorias').val(obj.categoria);
+      $('#codigo_barra').val(obj.codigo_barra);
+      obj.importado == "Si" ? $('#inlineCheckbox1').prop("checked",true) : $('#inlineCheckbox1').prop("checked",false);
+}
+
+function limpiar(){
+      $('#nombre').val("");
+      $('#id').val("");
+      $('#descripcion').val("");
+      $('#cantidad').val("");
+      $('#proveedor').val("");
+      $('#caducidad').val("");
+      $('#categorias').val("");
+      $('#codigo_barra').val("");
+  }
+
 });
