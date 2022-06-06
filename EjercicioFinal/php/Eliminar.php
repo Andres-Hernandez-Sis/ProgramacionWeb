@@ -3,7 +3,7 @@
 include ("Conexion.php");
 
 
-$iduser=$_POST['par1'];
+$id=$_POST['par1'];
 
 try {
     $consultasql= "DELETE FROM `producto` WHERE id=".$id;

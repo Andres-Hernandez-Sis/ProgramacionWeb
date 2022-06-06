@@ -1,14 +1,15 @@
 $(document).ready(function(){
 
 //Consultar registros de la BD SIRVE
-$('#btnConsultar').click(function() {
+$('#btnsConsultar').click(function() {
       
             let parid = prompt("Teclee el ID a consultar");
+  
             $.post('php/Consultar.php',{par1:parid},function(dato){      
             refrescar(dato);
             },'json');
 
-        });
+});
 
 $('#btnInsertar').click(function() {
 
@@ -19,13 +20,21 @@ $('#btnInsertar').click(function() {
             let cad = $('#caducidad').val();
             let cate = $('#categoria').val();
             let codbar = $('#codigo_barra').val();
-            let imp = $('#inlineCheckbox1').prop("checked") == "Si" ? "Si" : "No";
+            let imp = $('#inlineCheckbox1').prop('checked') ? 'Si' : 'No'; // nofunciona tampoco
 
-        $.post('php/Registrar.php',{nombre:nom, descripcion:des, cantidad:cant, proveedor:prov, caducidad:cad, categoria:cate, codigo_barra:codbar, importado:imp},function(dato){
+            $.post('php/Registrar.php',{nombre:nom, descripcion:des, cantidad:cant, proveedor:prov, caducidad:cad, categoria:cate, codigo_barra:codbar, importado:imp},function(dato){
             refrescar(dato);
           },'json');
 });   
 
+
+
+$('#btnBorrar').click(function() {
+            let id = $('#id').val();
+          $.post('php/Eliminar.php',{id:par1},function(dato){
+            refrescar(dato);
+          },'json');
+});
 
 
 $('#btnLimpiar').click(function(){

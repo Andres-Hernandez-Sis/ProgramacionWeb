@@ -16,3 +16,7 @@ div p{
 body{
     background-color: beige;
 }
+
+#btn1, #btn2, #btn3, #btn4, #btn5, #chk{
+    padding: 10px;    
+}
