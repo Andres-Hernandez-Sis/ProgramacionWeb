@@ -18,13 +18,13 @@ try{
               }
               else{
                 refrescar(dato);
-                console.log("Se agrego un objeto")
+                console.log("Se regreso un objeto")
               }
               },'json');
             })
 }         
 catch(error) {
-            Swal.fire("Error", "Ha ocurrido un error", "error" + error);
+            Swal.fire("Error", "Ha ocurrido un error", "error");
 }
 });
 
@@ -51,35 +51,64 @@ try{
             
 }
 catch(error) {
-  Swal.fire("Error", "Ha ocurrido un error", "error" + error);
+  Swal.fire("Error", "Ha ocurrido un error", "error");
 }
             
 });   
 
 
+$('#btnModificar').click(function() {
+                      
+            let id =  $('#id').val();
+            let nom = $('#nombre').val();
+            let des = $('#descripcion').val();
+            let cant= $('#cantidad').val();
+            let prov = $('#proveedor').val();
+            let cad = $('#caducidad').val();
+            let cate = $('#categoria').val();
+            let codbar = $('#codigo_barra').val();
+            let imp = $('#inlineCheckbox1').prop('checked') ? 'Si' : 'No'; // nofunciona tampoco   
+try{
+            if(id == "")
+            {
+                swal("Error","No se encontro el registro", "error");
+            }else{ //En este caso es alreves en los parametrosL
+              $.post('php/Modificar.php',{nom:nombre, des:descripcion, cant:cantidad, prov:proveedor, cad:caducidad, cate:categoria, codbar:codigo_barra, imp:importado},function(dato){
+              refrescar(dato);
+              },'json');
+              Swal.fire("Exito 📦", "Se modificó el producto.", "success");
+            }
+             
+}
+catch(error) {
+  Swal.fire("Error", "Ha ocurrido un error", "error");
+}
+                        
+});
 
-$('#btEliminar').click(function() {
+
+
+$('#btnEliminar').click(function() {
 
 try{
               // let id = $('#id').val();
-              var id = document.getElementById("id").value;
-              if (id == null || id =="" || id == false)
+              let id = $('#id').val();
+              if (id == null || id =="")
               {
-                Swal.fire("Algo salió mal", "No se pudo eliminar el producto.", "info" + error);
+                Swal.fire("Algo salió mal", "No se pudo eliminar el producto.", "info");
               }
               else{
                 $.post('php/Eliminar.php',{par1:id},function(dato){
                   refrescar(dato);
                 },'json');
-                Swal.fire("Exito", "Se eliminó el producto 🤠", "info" + error);
+                Swal.fire("Exito", "Se eliminó el producto 🤠", "success");
               }           
 }
 catch(error) {
-    Swal.fire("Error", "Ha ocurrido un error:C", "error" + error);
+    Swal.fire("Error", "Ha ocurrido un error:C", "error");
 }
           
 });
-
 
     
   

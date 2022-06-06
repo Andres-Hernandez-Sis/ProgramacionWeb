@@ -3,10 +3,10 @@
 include ("Conexion.php");
 
 
-$id=$_POST['par1'];
+$id= $_POST['par1'];
 
 try {
-    $consultasql= "DELETE FROM producto WHERE id = ".$id;
+    $consultaSql= "delete from producto where id = ".$id;
     $consulta = $con -> prepare($consultaSql);
     $consulta -> execute();
     $resultado = $consulta ->fetch(PDO::FETCH_ASSOC);
