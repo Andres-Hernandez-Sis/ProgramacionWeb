@@ -37,7 +37,7 @@ try{
             let cad = $('#caducidad').val();
             let cate = $('#categoria').val();
             let codbar = $('#codigo_barra').val();
-            let imp = $('#inlineCheckbox1').prop('checked') ? 'Si' : 'No'; // nofunciona tampoco
+            let imp = $('#importado').prop('checked') ? 'Si' : 'No'; // nofunciona tampoco
 
             if(nom == "" || cant == "" || des =="" || prov == "" || cad == "" || codbar == ""){
                 Swal.fire("Error:", "Rellene los campos vacíos.", "error");  
@@ -60,23 +60,25 @@ catch(error) {
 $('#btnModificar').click(function() {
                       
             let id =  $('#id').val();
-            let nom = $('#nombre').val();
-            let des = $('#descripcion').val();
-            let cant= $('#cantidad').val();
-            let prov = $('#proveedor').val();
-            let cad = $('#caducidad').val();
-            let cate = $('#categoria').val();
-            let codbar = $('#codigo_barra').val();
-            let imp = $('#inlineCheckbox1').prop('checked') ? 'Si' : 'No'; // nofunciona tampoco   
+            let nombre = $('#nombre').val();
+            let descripcion = $('#descripcion').val();
+            let cantidad= $('#cantidad').val();
+            let proveedor = $('#proveedor').val();
+            let caducidad = $('#caducidad').val();
+            let categoria = $('#categoria').val();
+            let codigo_barra = $('#codigo_barra').val();
+            let importado = $('#importado').prop('checked') ? 'Si' : 'No';
 try{
-            if(id == "")
+            if(id == "" || id == null)
             {
-                swal("Error","No se encontro el registro", "error");
-            }else{ //En este caso es alreves en los parametrosL
-              $.post('php/Modificar.php',{nom:nombre, des:descripcion, cant:cantidad, prov:proveedor, cad:caducidad, cate:categoria, codbar:codigo_barra, imp:importado},function(dato){
-              refrescar(dato);
-              },'json');
-              Swal.fire("Exito 📦", "Se modificó el producto.", "success");
+                Swal.fire("Error","No se encontro el registro", "error");
+            }
+            else
+            { 
+                $.post('php/Modificar.php',{id:id,nombre:nombre, descripcion:descripcion, cantidad:cantidad, proveedor:proveedor, caducidad:caducidad, categoria:categoria, codigo_barra:codigo_barra, importado:importado},function(dato){
+                refrescar(dato);
+                },'json');
+                Swal.fire("Exito 📦", "Se modificó el producto.", "success");
             }
              
 }
@@ -85,6 +87,10 @@ catch(error) {
 }
                         
 });
+
+
+
+
 
 
 
@@ -126,7 +132,7 @@ function refrescar(obj) {
       $('#caducidad').val(obj.caducidad);
       $('#categorias').val(obj.categoria);
       $('#codigo_barra').val(obj.codigo_barra);
-      obj.importado == "Si" ? $('#inlineCheckbox1').prop("checked",true) : $('#inlineCheckbox1').prop("checked",false);
+      obj.importado == "Si" ? $('#importado').prop("checked",true) : $('#importado').prop("checked",false);
 }
 
 function limpiar(){

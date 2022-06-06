@@ -2,7 +2,7 @@
 
 include("conexion.php");
 
-$id = $_POST['par1'];
+$id = $_POST['id'];
 $nombre = $_POST['nombre'];
 $descripcion = $_POST['descripcion'];
 $cantidad = $_POST['cantidad'];
@@ -15,7 +15,7 @@ $importado = $_POST['importado'];
 
 try 
     {
-    $consultaSql= "UPDATE producto SET nombre='$nombre',descripcion='$descripcion',cantidad='$cantidad',proveedor='$proveedor',caducidad='$caducidad',categoria='$categoria',codigo_barra='$codigo_barra', importado = '$importado' WHERE id=".$id;
+    $consultaSql= "update producto set nombre='$nombre',descripcion='$descripcion',cantidad='$cantidad',proveedor='$proveedor',caducidad='$caducidad',categoria='$categoria',codigo_barra='$codigo_barra', importado = '$importado' WHERE id=".$id;
     $consulta = $con -> prepare($consultaSql);
     $consulta -> execute();
     $resultado = $consulta ->fetch(PDO::FETCH_ASSOC);
