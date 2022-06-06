@@ -6,7 +6,7 @@ include ("Conexion.php");
 $id=$_POST['par1'];
 
 try {
-    $consultasql= "DELETE FROM `producto` WHERE id=".$id;
+    $consultasql= "DELETE FROM producto WHERE id = ".$id;
     $consulta = $con -> prepare($consultaSql);
     $consulta -> execute();
     $resultado = $consulta ->fetch(PDO::FETCH_ASSOC);
