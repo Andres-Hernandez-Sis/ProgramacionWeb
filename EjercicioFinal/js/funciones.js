@@ -58,10 +58,11 @@ catch(error) {
 
 
 
-$('#btnEliminar').click(function() {
+$('#btEliminar').click(function() {
 
 try{
-              let id = $('#id').val();
+              // let id = $('#id').val();
+              var id = document.getElementById("id").value;
               if (id == null || id =="" || id == false)
               {
                 Swal.fire("Algo salió mal", "No se pudo eliminar el producto.", "info" + error);
@@ -71,8 +72,7 @@ try{
                   refrescar(dato);
                 },'json');
                 Swal.fire("Exito", "Se eliminó el producto 🤠", "info" + error);
-              }
-              
+              }           
 }
 catch(error) {
     Swal.fire("Error", "Ha ocurrido un error:C", "error" + error);
@@ -80,19 +80,6 @@ catch(error) {
           
 });
 
-$('#btEliminar').click(function(){
-      var ID = document.getElementById("inputID").value;
-      if (ID == null || ID == "") {
-          swal("Error", "No es posible eliminar un usuario que no existe", "error");
-      } 
-      else 
-      {
-          $.post('php/Eliminar.php', {par1:ID}, function(dato){
-              swal("Accion completada", "Se ha eliminado correctamente", "success");
-              LimpiarFormulario();
-          },'json');            
-      }
-});
 
     
   
