@@ -1,4 +1,4 @@
-# 📓 Bienvenido al repositorio hernandezlopez! 👓
+# 📓 Bienvenido al repositorio Programación Web! 👓
 
 - 👋 Hola, Soy @Andres-Hernandez-Sis.
 - 👀 Estoy interesado en la tecnología y como esta influye en nuestra vida diaria.
